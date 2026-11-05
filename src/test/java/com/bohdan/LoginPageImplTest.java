@@ -4,6 +4,7 @@ import com.bohdan.helper.LoginPageHelper;
 import com.bohdan.page.LoginPageImpl;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -27,11 +28,13 @@ public class LoginPageImplTest {
     }
 
     @Test
+    @DisplayName("Успішний вхід з коректними обліковими даними")
     void loginPageShouldLoadSuccessfullyWhenUserHasValidCredentials() {
         LoginPageHelper.correctLogin(loginPageImpl);
     }
 
     @Test
+    @DisplayName("Показує помилку при вході з некоректними обліковими даними")
     void loginPageShouldLoadSuccessfullyWhenUserHasInvalidCredentials() {
         loginPageImpl.login("http://localhost:8080",
                 "invalid@example.com",

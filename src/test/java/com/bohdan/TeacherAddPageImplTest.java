@@ -5,13 +5,13 @@ import com.bohdan.page.LoginPageImpl;
 import com.bohdan.page.TeacherAddPageImpl;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -36,6 +36,7 @@ public class TeacherAddPageImplTest {
     }
 
     @Test
+    @DisplayName("Успішно додає викладача з коректними даними")
     void teacherAddPageShouldLoadSuccessfullyWhenUserHasValidCredentials() {
         LoginPageHelper.correctLogin(new LoginPageImpl(driver));
 
@@ -63,6 +64,7 @@ public class TeacherAddPageImplTest {
     }
 
     @Test
+    @DisplayName("Не додає викладача, якщо пароль не відповідає вимогам")
     void teacherAddShouldFailWhenPasswordDoesNotMeetRequirements() {
         LoginPageHelper.correctLogin(new LoginPageImpl(driver));
 
