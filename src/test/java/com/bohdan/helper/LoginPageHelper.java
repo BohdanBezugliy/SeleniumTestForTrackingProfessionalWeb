@@ -1,6 +1,6 @@
 package com.bohdan.helper;
 
-import com.bohdan.page.LoginPageImpl;
+import com.bohdan.page.LoginPage;
 
 /**
  * Helper class for the "Login" page tests.
@@ -15,11 +15,11 @@ public final class LoginPageHelper {
     }
 
     /**
-     * Performs a correct login using the provided {@link LoginPageImpl} instance.
+     * Performs a correct login using the provided {@link LoginPage} instance.
      *
-     * @param loginPage the {@link LoginPageImpl} instance to use for login
+     * @param loginPage the {@link LoginPage} instance to use for login
      */
-    public static void correctLogin(LoginPageImpl loginPage) {
+    public static void correctLogin(LoginPage loginPage) {
         loginPage.login("http://localhost:8080",
                 "admin@example.com",
                 "adminPassword");

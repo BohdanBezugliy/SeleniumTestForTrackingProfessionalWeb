@@ -1,6 +1,7 @@
 package com.bohdan;
 
 import com.bohdan.helper.LoginPageHelper;
+import com.bohdan.page.LoginPage;
 import com.bohdan.page.LoginPageImpl;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,7 +18,7 @@ import static org.hamcrest.Matchers.is;
  */
 public class LoginPageImplTest {
 
-    private LoginPageImpl loginPageImpl;
+    private LoginPage loginPageImpl;
 
     private WebDriver driver;
 
