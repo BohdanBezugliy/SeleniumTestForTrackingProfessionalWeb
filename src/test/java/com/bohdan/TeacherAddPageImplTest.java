@@ -2,6 +2,7 @@ package com.bohdan;
 
 import com.bohdan.helper.LoginPageHelper;
 import com.bohdan.page.LoginPageImpl;
+import com.bohdan.page.TeacherAddPage;
 import com.bohdan.page.TeacherAddPageImpl;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -24,7 +25,7 @@ import static org.hamcrest.Matchers.is;
 public class TeacherAddPageImplTest {
     private WebDriverWait wait;
 
-    private TeacherAddPageImpl modalPage;
+    private TeacherAddPage modalPage;
 
     private WebDriver driver;
 

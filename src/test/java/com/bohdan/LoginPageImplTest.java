@@ -1,6 +1,7 @@
 package com.bohdan;
 
 import com.bohdan.helper.LoginPageHelper;
+import com.bohdan.page.LoginPage;
 import com.bohdan.page.LoginPageImpl;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,29 +18,29 @@ import static org.hamcrest.Matchers.is;
  */
 public class LoginPageImplTest {
 
-    private LoginPageImpl loginPageImpl;
+    private LoginPage pageImpl;
 
     private WebDriver driver;
 
     @BeforeEach
     void setUp() {
         driver = new ChromeDriver();
-        loginPageImpl = new LoginPageImpl(driver);
+        pageImpl = new LoginPageImpl(driver);
     }
 
     @Test
     @DisplayName("Успішний вхід з коректними обліковими даними")
     void loginPageShouldLoadSuccessfullyWhenUserHasValidCredentials() {
-        LoginPageHelper.correctLogin(loginPageImpl);
+        LoginPageHelper.correctLogin(pageImpl);
     }
 
     @Test
     @DisplayName("Показує помилку при вході з некоректними обліковими даними")
     void loginPageShouldLoadSuccessfullyWhenUserHasInvalidCredentials() {
-        loginPageImpl.login("http://localhost:8080",
+        pageImpl.login("http://localhost:8080",
                 "invalid@example.com",
                 "invalidPassword");
-        assertThat(loginPageImpl.isErrorDisplayed(), is(true));
+        assertThat(pageImpl.isErrorDisplayed(), is(true));
     }
 
     @AfterEach
